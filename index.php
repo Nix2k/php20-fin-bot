@@ -15,9 +15,9 @@
 		$humidity=$data->main->humidity;
 		$weather=$data->weather[0]->description;
 		$wIco=$data->weather[0]->icon;
-		return("Температура воздуха: $temp
-				Атмосферное давление: $pressure
-				Влажность воздуха: $humidity
+		return("	Температура воздуха: $temp &deg;C
+				Атмосферное давление: $pressure мм.рт.ст.
+				Влажность воздуха: $humidity %
 				Погодные условия: $weather");
 	}   
 

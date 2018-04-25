@@ -14,7 +14,7 @@
          if ($text == "/start") {
             $reply = "Добро пожаловать в бота! Задайте ваш вопрос.";
             //$reply_markup = $telegram->replyKeyboardMarkup([ 'keyboard' => $keyboard, 'resize_keyboard' => true, 'one_time_keyboard' => false ]);
-            $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply);
+            $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         }else{
         	$reply = 'Ваш вопрос "<i>'.$text.'</i>" передан на обработку.';
         	$telegram->sendMessage([ 'chat_id' => $chat_id, 'parse_mode'=> 'HTML', 'text' => $reply ]);

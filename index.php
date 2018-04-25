@@ -30,7 +30,7 @@
 	$text = $result["message"]["text"]; //Текст сообщения
 	$chat_id = $result["message"]["chat"]["id"]; //Уникальный идентификатор пользователя
 	$name = $result["message"]["from"]["username"]; //Юзернейм пользователя
-	$keyboard = [["Погода"]]; //Клавиатура
+	$keyboard = [["Погода"], ["Пробки"]]; //Клавиатура
 
 	if($text){
 		switch ($text) {
@@ -39,6 +39,9 @@
 				break;
 			case 'Погода':
 				$reply = getTemp();
+				break;
+			case 'Пробки':
+				$reply = include('probki.html');
 				break;
 			default:
 				$reply = "Неизвестная команда";

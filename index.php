@@ -2,7 +2,7 @@
 	function getTemp()
 	{
 		$appid='499d5cded32e442061029f50618471ac';
-		$city=$_GET["Yaroslavl"];
+		$city='Yaroslavl';
 		$reqStr="http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$appid&lang=ru";
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $reqStr);
@@ -15,10 +15,10 @@
 		$humidity=$data->main->humidity;
 		$weather=$data->weather[0]->description;
 		$wIco=$data->weather[0]->icon;
-		return("Температура воздуха: $temp<br>
-				Атмосферное давление: $pressure<br>
+		return("Температура воздуха: $temp
+				Атмосферное давление: $pressure
 				Влажность воздуха: $humidity
-				Погодные условия: <img src='http://openweathermap.org/img/w/".$wIco.".png'> <i><?= $weather?></i>");
+				Погодные условия: $weather");
 	}   
 
 	include('vendor/autoload.php'); //Подключаем библиотеку

@@ -41,7 +41,7 @@
 				$reply = getTemp();
 				break;
 			case 'Пробки':
-				$reply = include('probki.html');
+				$reply = file_get_contents('probki.html');
 				break;
 			default:
 				$reply = "Неизвестная команда";
